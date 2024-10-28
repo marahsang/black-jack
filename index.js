@@ -4,9 +4,13 @@ let sum = firstCard + secondCard
 hasBlackJack = false
 isAlive = true
 let message = ""
-let starEL = document.getElementById("start-el")
-let messageEl = document.getElementById("message-el")
-let sumEl = document.getElementById("sum-el")
+//let starEL = document.getElementById("start-el")
+//let messageEl = document.getElementById("message-el")
+//let sumEl = document.getElementById("sum-el")
+
+let starEL = document.querySelector("#start-el")
+let messageEl = document.querySelector("#message-el")
+let sumEl = document.querySelector("#sum-el")
 
 function startGame () {
     sumEl.textContent = "Sum: " + sum
