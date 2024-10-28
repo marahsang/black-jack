@@ -9,19 +9,19 @@ let message = ""
 //let sumEl = document.getElementById("sum-el")
 
 let starEL = document.querySelector("#start-el")
-let messageEl = document.querySelector("#message-el")
-let sumEl = document.querySelector("#sum-el")
+let messageEl = document.querySelector(".message-el")
+let sumEl = document.querySelector("sum-el")
 
 function startGame () {
     sumEl.textContent = "Sum: " + sum
     if(sum <= 20) {
-        message = "Do you want to draw a new card? 🌝"
+        message = "Do you want to draw a new card?"
     }   else if (sum === 21) {
-        message = "Woohoo you've got blackjack 😇"
+        message = "Woohoo you've got blackjack"
         hasBlackJack = true
     
     }   else {
-        message = "You are out of the game 😦"
+        message = "You are out of the game"
         isAlive = false
     }
     messageEl.textContent = message
