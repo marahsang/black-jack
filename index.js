@@ -1,5 +1,5 @@
-let firstCard = 13
-let secondCard = 12
+let firstCard = 11
+let secondCard = 6
 let sum = firstCard + secondCard
 hasBlackJack = false
 isAlive = true
@@ -33,8 +33,8 @@ function startGame () {
 
     function newCard(){
         console.log("Drawing a new card from the deck")
-        let card = 4
-        sum = firstCard + secondCard + card
+        let card = 3
+        sum += card
         startGame()
     }
 
