@@ -34,9 +34,22 @@ function renderGame() {
         console.log("Drawing a new card from the deck")
         let card = 3
         sum += card
+        cards.push(card)
+        console.log(cards)
         renderGame()
     }
 
+
+   /* let messages = [
+        "Hey, how's it going",
+        "I'm great, thank you! How about you?",
+        "All good. Been working on my portfolio lately."
+    ]
+    let newMessage = "same here"
+    console.log(messages.push(newMessage))
+
+    messages.pop()
+    console.log(messages)
 /* let firstCard = 10
 let secondCard = 12
 let sum = firstCard + secondCard
