@@ -4,17 +4,15 @@ let sum = firstCard + secondCard
 hasBlackJack = false
 isAlive = true
 let message = ""
-//let starEL = document.getElementById("start-el")
-//let messageEl = document.getElementById("message-el")
-//let sumEl = document.getElementById("sum-el")
-
 let starEL = document.querySelector("#start-el")
 let messageEl = document.querySelector("#message-el")
 let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.querySelector("#cards-el")
-let newCardEl = document.querySelector("#newCard-el")
-
-function startGame () {
+function startGame() {
+    console.log("Refactoring")
+    renderGame()
+}
+function renderGame() {
     sumEl.textContent = "Sum: " + sum
     cardsEl.textContent ="Cards: " + firstCard + " " + secondCard
 
@@ -35,7 +33,7 @@ function startGame () {
         console.log("Drawing a new card from the deck")
         let card = 3
         sum += card
-        startGame()
+        renderGame()
     }
 
 /* let firstCard = 10
@@ -57,5 +55,9 @@ if(sum <= 20) {
     console.log(isAlive)
 }
 console.log(message)
+
+//let starEL = document.getElementById("start-el")
+//let messageEl = document.getElementById("message-el")
+//let sumEl = document.getElementById("sum-el")
 
 */
