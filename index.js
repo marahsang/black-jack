@@ -9,13 +9,18 @@ let starEL = document.querySelector("#start-el")
 let messageEl = document.querySelector("#message-el")
 let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.querySelector("#cards-el")
+
 function startGame() {
     console.log("Refactoring")
     renderGame()
 }
 function renderGame() {
     sumEl.textContent = "Sum: " + sum
-    cardsEl.textContent ="Cards: " + firstCard[0] + " " + secondCard[1]
+    cardsEl.textContent ="Cards: " 
+
+    for(i = 0; i < cards.length; i++) {
+       cardsEl.textContent += cards[i] + " "
+    }
 
     if(sum <= 20) {
         message = "Do you want to draw a new card?"
@@ -38,8 +43,7 @@ function renderGame() {
         console.log(cards)
         renderGame()
     }
-
-
+    
    /* let messages = [
         "Hey, how's it going",
         "I'm great, thank you! How about you?",
