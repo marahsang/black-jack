@@ -1,5 +1,5 @@
-let firstCard = 11
-let secondCard = 6
+let firstCard = getRandomCard()
+let secondCard = getRandomCard()
 let cards = [firstCard, secondCard]
 let sum = firstCard + secondCard
 hasBlackJack = false
@@ -9,6 +9,8 @@ let starEL = document.querySelector("#start-el")
 let messageEl = document.querySelector("#message-el")
 let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.querySelector("#cards-el")
+let player1Time = 102
+let player2Time = 107 
 
 function startGame() {
     console.log("Refactoring")
@@ -44,38 +46,13 @@ function renderGame() {
         renderGame()
     }
     
-   /* let messages = [
-        "Hey, how's it going",
-        "I'm great, thank you! How about you?",
-        "All good. Been working on my portfolio lately."
-    ]
-    let newMessage = "same here"
-    console.log(messages.push(newMessage))
+    function totalRaceTime() {
+        let players = player1Time + player2Time
+        return players
+    }    
+     player = totalRaceTime()
+    console.log(player)
 
-    messages.pop()
-    console.log(messages)
-/* let firstCard = 10
-let secondCard = 12
-let sum = firstCard + secondCard
-let hasBlackJack = false
-let isAlive = true
-let message = ""
-message = "Woohoo you've got blackjack 😇"
-if(sum <= 20) {
-    console.log("Do you want to draw a new card? 🌝")
-}   else if (sum === 21) {
-    console.log("Woohoo you've got blackjack 😇")
-    hasBlackJack = true
-    console.log(hasBlackJack)
-}   else {
-    console.log("You are out of the game 😦") 
-    isAlive = false
-    console.log(isAlive)
-}
-console.log(message)
-
-//let starEL = document.getElementById("start-el")
-//let messageEl = document.getElementById("message-el")
-//let sumEl = document.getElementById("sum-el")
-
-*/
+    function getRandomCard() {
+        return 5
+    }
