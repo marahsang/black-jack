@@ -47,6 +47,11 @@ function renderGame() {
         renderGame()
     }
 
-    let randomNumber = Math.floor(Math.random() * 6)
-    console.log(randomNumber)
     
+    function rollDice() {
+        let randomNumber = Math.floor(Math.random() * 6) + 1
+        return randomNumber
+    }
+
+    let randm = rollDice()
+    console.log(randm)
