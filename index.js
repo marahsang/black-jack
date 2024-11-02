@@ -1,9 +1,7 @@
-let firstCard = getRandomCard()
-let secondCard = getRandomCard()
-let cards = [firstCard, secondCard]
-let sum = firstCard + secondCard
+let cards = []
+let sum = 0
 hasBlackJack = false
-isAlive = true 
+isAlive = false
 let message = ""
 let starEL = document.querySelector("#start-el")
 let messageEl = document.querySelector("#message-el")
@@ -22,9 +20,15 @@ function getRandomCard() {
     }
 
 function startGame() {
-    console.log("Refactoring")
+    let firstCard = getRandomCard()
+    let secondCard = getRandomCard()
+    cards = [firstCard, secondCard]
+    sum = firstCard + secondCard
+    isAlive = true
+    hasBlackJack = false
     renderGame()
-}
+    }
+
 function renderGame() {
     sumEl.textContent = "Sum: " + sum
     cardsEl.textContent ="Cards: " 
@@ -54,12 +58,3 @@ function renderGame() {
         console.log(cards)
         renderGame()
     }
-
-    
-    function rollDice() {
-        let randomNumber = Math.floor(Math.random() * 6) + 1
-        return randomNumber
-    }
-
-    let randm = rollDice()
-    console.log(randm)
