@@ -9,9 +9,10 @@ let starEL = document.querySelector("#start-el")
 let messageEl = document.querySelector("#message-el")
 let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.querySelector("#cards-el")
-let player1Time = 102
-let player2Time = 107 
 
+function getRandomCard() {
+        return 5
+    }
 function startGame() {
     console.log("Refactoring")
     renderGame()
@@ -39,20 +40,13 @@ function renderGame() {
 
     function newCard(){
         console.log("Drawing a new card from the deck")
-        let card = 3
+        let card = getRandomCard()
         sum += card
         cards.push(card)
         console.log(cards)
         renderGame()
     }
-    
-    function totalRaceTime() {
-        let players = player1Time + player2Time
-        return players
-    }    
-     player = totalRaceTime()
-    console.log(player)
 
-    function getRandomCard() {
-        return 5
-    }
+    let randomNumber = Math.floor(Math.random() * 6)
+    console.log(randomNumber)
+    
