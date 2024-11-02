@@ -11,7 +11,8 @@ let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.querySelector("#cards-el")
 
 function getRandomCard() {
-        return 5
+ let randomNumber = Math.floor(Math.random() * 13) + 1
+    return randomNumber
     }
 function startGame() {
     console.log("Refactoring")
