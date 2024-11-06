@@ -1,3 +1,7 @@
+let player = {
+    name: "Abel",
+    chips: 20
+}
 let cards = []
 let sum = 0
 hasBlackJack = false
@@ -7,6 +11,8 @@ let starEL = document.querySelector("#start-el")
 let messageEl = document.querySelector("#message-el")
 let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.querySelector("#cards-el")
+let playerEl = document.querySelector("#player-el")
+playerEl.textContent = player.name + ":  $" + player.chips  
 
 function getRandomCard() {
     let randomNumber = Math.floor(Math.random() * 13) + 1
@@ -56,7 +62,7 @@ function renderGame() {
             sum += card
             cards.push(card);
             renderGame()
-        }   else {
-            console.log("You can't draw a new card, ")
-        }
+        }  
     }
+
+
