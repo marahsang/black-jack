@@ -51,10 +51,12 @@ function renderGame() {
     }
 
     function newCard(){
-        console.log("Drawing a new card from the deck")
-        let card = getRandomCard()
-        sum += card
-        cards.push(card)
-        console.log(cards)
-        renderGame()
+        if(isAlive && !hasBlackJack) {
+            let card = getRandomCard();
+            sum += card
+            cards.push(card);
+            renderGame()
+        }   else {
+            console.log("You can't draw a new card, ")
+        }
     }
