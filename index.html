@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blackjack</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>Blackjack</h1>
-    <p id="message-el">Want to play a round?</p>
-    <p id="cards-el">Cards:</p>
-    <p id="sum-el">Sum:</p>
-    <p id="greeting-el"></p>
-    <button id="start-el" onclick="startGame()">START GAME</button>
-    <button id="newCard-el" onclick="newCard()">NEW CARD</button>
-    <p id="player-el"></p>
+    <main class="game-container">
+        <h1>Blackjack</h1>
+        <p id="message-el">Want to play a round?</p>
+        <div class="game-info">
+            <p id="cards-el">Cards:</p>
+            <p id="sum-el">Sum:</p>
+        </div>
+        <p id="greeting-el"></p>
+        <div class="buttons">
+            <button id="start-el" onclick="startGame()">START GAME</button>
+            <button id="newCard-el" onclick="newCard()">NEW CARD</button>
+        </div>
+        <p id="player-el"></p>
+    </main>
     <script src="index.js"></script>
 </body>
 </html>

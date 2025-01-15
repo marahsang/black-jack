@@ -1,68 +1,56 @@
 let player = {
-    name: "Abel",
-    chips: 20
-}
-let cards = []
-let sum = 0
-hasBlackJack = false
-isAlive = false
-let message = ""
-let starEL = document.querySelector("#start-el")
-let messageEl = document.querySelector("#message-el")
-let sumEl = document.querySelector("#sum-el")
-let cardsEl = document.querySelector("#cards-el")
-let playerEl = document.querySelector("#player-el")
-playerEl.textContent = player.name + ":  $" + player.chips  
+    name: "Player",
+    chips: 100
+};
+
+let cards = [];
+let sum = 0;
+let hasBlackjack = false;
+let isAlive = false;
+let message = "";
 
 function getRandomCard() {
-    let randomNumber = Math.floor(Math.random() * 13) + 1
-    if(randomNumber === 1) {
-        return 11
-      }  else if (randomNumber > 10 ) {
-            return 10
-        } else {
-            return randomNumber
-        }
-    }
+    let card = Math.floor(Math.random() * 13) + 1;
+    return card > 10 ? 10 : card === 1 ? 11 : card;
+}
 
 function startGame() {
-    let firstCard = getRandomCard()
-    let secondCard = getRandomCard()
-    cards = [firstCard, secondCard]
-    sum = firstCard + secondCard
-    isAlive = true
-    hasBlackJack = false
-    renderGame()
-    }
+    isAlive = true;
+    hasBlackjack = false; 
+    cards = [];
+    sum = 0;
+    let firstCard = getRandomCard();
+    let secondCard = getRandomCard();
+    cards.push(firstCard, secondCard);
+    sum = firstCard + secondCard;
+    renderGame();
+}
 
 function renderGame() {
-    sumEl.textContent = "Sum: " + sum
-    cardsEl.textContent ="Cards: " 
+    document.getElementById("cards-el").textContent = "Cards: " + cards.join(" ");
+    document.getElementById("sum-el").textContent = "Sum: " + sum;
+    document.getElementById("player-el").textContent = `${player.name}: $${player.chips}`;
 
-    for(i = 0; i < cards.length; i++) {
-       cardsEl.textContent += cards[i] + " "
+    if (sum < 21) {
+        message = "Do you want to draw a new card?";
+    } else if (sum === 21) {
+        message = "Wohoo! You've got Blackjack!";
+        hasBlackjack = true;
+    } else {
+        message = "You're out of the game!";
+        isAlive = false;
     }
+    document.getElementById("message-el").textContent = message;
+}
 
-    if(sum <= 20) {
-        message = "Do you want to draw a new card?"
-    }   else if (sum === 21) {
-        message = "Woohoo you've got blackjack"
-        hasBlackJack = true
-    
-    }   else {
-        message = "You are out of the game"
-        isAlive = false
+function newCard() {
+    if (isAlive && !hasBlackjack) {
+        let card = getRandomCard();
+        cards.push(card);
+        sum += card;
+        renderGame();
+    } else if (!isAlive || hasBlackjack) {
+        document.getElementById("message-el").textContent =
+            "Game over! Start a new game to play again.";
     }
-    messageEl.textContent = message
-    }
-
-    function newCard(){
-        if(isAlive && !hasBlackJack) {
-            let card = getRandomCard();
-            sum += card
-            cards.push(card);
-            renderGame()
-        }  
-    }
-
-
+}
